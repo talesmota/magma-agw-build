@@ -1,3 +1,4 @@
 #!/bin/bash
 
-echo "Hello World"
+# Cloning magma repo:
+git clone https://github.com/magma/magma.git --depth 1
