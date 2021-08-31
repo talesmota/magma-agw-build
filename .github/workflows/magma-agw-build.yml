@@ -1,0 +1,8 @@
+name: Magma AGW Build
+on: [push]
+jobs:
+  Magma-AGW-Build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: ./build.sh
