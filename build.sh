@@ -1,13 +1,19 @@
 #!/bin/bash
 
+# Install prerequisites
 pip3 install ansible fabric3 jsonpickle requests PyYAML
 vagrant plugin install vagrant-vbguest
 
+# set magma root directory
 MAGMA_ROOT=${PWD}/magma
 
 # Cloning magma repo:
 git clone https://github.com/magma/magma.git --depth 1
 
+# start building magma
 cd ${MAGMA_ROOT}/lte/gateway
-
 fab release package:vcs=git
+
+# copy magma packages to github runner
+vagrant ssh -c "cp -r magma-packages /vagrant"
+cp -r magma-packages/magma*.deb ${GITHUB_WORKSPACE}
