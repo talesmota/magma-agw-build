@@ -1,5 +1,12 @@
 name: Magma AGW Build
-on: [push]
+
+on:
+  schedule:
+  - cron: "0 0 * * *"
+  push:
+    branches:
+    - master
+
 jobs:
   Magma-AGW-Build:
     runs-on: macos-latest
