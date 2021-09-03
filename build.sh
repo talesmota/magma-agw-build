@@ -13,4 +13,4 @@ fab release package:vcs=git
 
 # copy magma packages to github runner
 vagrant ssh -c "cp -r magma-packages /vagrant"
-cp -r magma-packages/magma*.deb ${GITHUB_WORKSPACE}
+cp -r magma-packages/*.deb ${GITHUB_WORKSPACE}
