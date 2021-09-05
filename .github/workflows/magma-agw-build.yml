@@ -25,4 +25,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: magma-packages
-        path: ${GITHUB_WORKSPACE}/magma/lte/gateway/magma-packages/
+        path: ${GITHUB_WORKSPACE}/magma/lte/gateway/magma-packages/*.deb
