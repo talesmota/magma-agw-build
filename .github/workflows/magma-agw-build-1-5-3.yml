@@ -1,4 +1,4 @@
-name: Magma AGW Build
+name: Magma AGW Build Version
 
 on:
   schedule:
