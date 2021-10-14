@@ -3,6 +3,12 @@ name: Magma AGW Build Version
 on:
   schedule:
   - cron: "0 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Paulo'
 
 jobs:
   Magma-AGW-Build-Version:
