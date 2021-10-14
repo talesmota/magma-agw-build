@@ -8,7 +8,7 @@ on:
     - master
 
 jobs:
-  Magma-AGW-Build:
+  Magma-AGW-Build-Version:
     runs-on: macos-latest
     steps:
     - run: echo "::set-output name=date::$(date +'%m-%d-%Y--%H-%M-%S')"
