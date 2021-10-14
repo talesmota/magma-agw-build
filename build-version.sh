@@ -15,7 +15,7 @@ git checkout tags/$1
 # start building magma
 cd lte/gateway
 sed -i '' 's/1.1.20210928/1.1.20210618/' Vagrantfile
-fab release package:vcs=git
+fab $2 package:vcs=git
 
 # copy magma packages to github runner
 vagrant ssh -c "cp -r magma-packages /vagrant"
