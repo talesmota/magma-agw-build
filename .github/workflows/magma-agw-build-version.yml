@@ -5,10 +5,10 @@ on:
   - cron: "0 */6 * * *"
   workflow_dispatch:
     inputs:
-      name:
-        description: 'Person to greet'
+      version:
+        description: 'Version to deploy'
         required: true
-        default: 'Paulo'
+        default: 'v1.5.3'
 
 jobs:
   Magma-AGW-Build-Version:
@@ -17,7 +17,7 @@ jobs:
     - run: echo "::set-output name=date::$(date +'%m-%d-%Y--%H-%M-%S')"
       id: date
     - uses: actions/checkout@v2
-    - run: ./build-1-5-3.sh
+    - run: ./build-version.sh ${{ inputs.version }}
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"

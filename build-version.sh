@@ -8,7 +8,7 @@ vagrant plugin install vagrant-vbguest
 
 # Cloning magma repo:
 git clone https://github.com/magma/magma.git 
-git checkout v1.5.3
+git checkout $1
 
 # start building magma
 cd magma/lte/gateway
