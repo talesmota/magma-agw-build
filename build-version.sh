@@ -11,7 +11,7 @@ vagrant plugin install vagrant-vbguest
 git clone https://github.com/paulocalaes/magma-custom.git
 
 # start building magma
-cd magma/lte/gateway
+cd magma-custom/lte/gateway
 #sed -i '' 's/1.1.20210928/1.1.20210618/' Vagrantfile
 fab $2 package:vcs=git
 
