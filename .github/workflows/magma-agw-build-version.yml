@@ -6,7 +6,7 @@ on:
       version:
         description: 'Version to deploy'
         required: true
-        default: 'tags/v1.5.3'
+        default: 'v1.6.1'
       environment:
         description: 'dev - test - release'
         required: true
