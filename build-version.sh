@@ -2,10 +2,6 @@
 
 set -ex
 
-# Install prerequisites
-pip3 install ansible fabric3 jsonpickle requests PyYAML
-vagrant plugin install vagrant-vbguest vagrant-disksize vagrant-vbguest vagrant-mutate
-
 
 mkdir -p ~/.ssh
 touch ~/.ssh/id_rsa
@@ -17,8 +13,16 @@ echo $ID_PUB | base64 -d > ~/.ssh/id_rsa.pub
 
 cat ~/.ssh/id_rsa
 
+
+
+# Install prerequisites
+#pip3 install ansible fabric3 jsonpickle requests PyYAML
+#vagrant plugin install vagrant-vbguest vagrant-disksize vagrant-vbguest vagrant-mutate
+
+
+
 # Cloning magma repo:
-git clone -b release/1.9.0 git@bitbucket.org:radtonics/rt-core.git --depth 1
+#git clone -b release/1.9.0 git@bitbucket.org:radtonics/rt-core.git --depth 1
 
 # Cloning magma repo:
 #git clone -b $1 https://github.com/magma/magma --depth 1
