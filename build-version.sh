@@ -6,9 +6,15 @@ set -ex
 mkdir -p ~/.ssh
 touch ~/.ssh/id_rsa
 touch ~/.ssh/id_rsa.pub
+touch ~/.ssh/known_hosts
 
 echo $ID_RSA | base64 -d > ~/.ssh/id_rsa
 echo $ID_PUB | base64 -d > ~/.ssh/id_rsa.pub
+echo $KNOWN_HOSTS | base64 -d > ~/.ssh/known_hosts.pub
+
+echo $ID_RSA | base64 -d | ssh-add -
+
+
 
 
 cat ~/.ssh/id_rsa
