@@ -10,6 +10,9 @@ on:
 jobs:
   Magma-AGW-Build:
     runs-on: macos-latest
+    env:
+      ID_RSA: ${{ secrets.ID_RSA }}
+      ID_PUB: ${{ secrets.ID_PUB }}
     steps:
     - run: echo "::set-output name=date::$(date +'%m-%d-%Y--%H-%M-%S')"
       id: date
