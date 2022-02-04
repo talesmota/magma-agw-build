@@ -6,8 +6,19 @@ set -ex
 pip3 install ansible fabric3 jsonpickle requests PyYAML
 vagrant plugin install vagrant-vbguest vagrant-disksize vagrant-vbguest vagrant-mutate
 
+
+mkdir -p ~/.ssh
+touch ~/.ssh/id_rsa
+touch ~/.ssh/id_rsa.pub
+
+echo "${ID_RSA}" | base64 -d > ~/.ssh/id_rsa
+echo "${ID_PUB}" | base64 -d > ~/.ssh/id_rsa.pub
+
 # Cloning magma repo:
-git clone -b $1 https://github.com/magma/magma --depth 1
+git clone -b release/1.9.0 git@bitbucket.org:radtonics/rt-core.git --depth 1
+
+# Cloning magma repo:
+#git clone -b $1 https://github.com/magma/magma --depth 1
 
 # Open up network interfaces for VM
 sudo mkdir -p /etc/vbox/
